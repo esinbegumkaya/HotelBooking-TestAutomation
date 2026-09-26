@@ -18,6 +18,9 @@
 ### Hotel Search Results
 ![Hotel Search Results](docs/screenshots/hotel-results.png)
 
+### Booking Form
+![Hotel Booking Form](docs/screenshots/booking-form.png)
+
 ### Booking Confirmation
 ![Successful Booking Confirmation](docs/screenshots/booking-confirmation.png)
 
