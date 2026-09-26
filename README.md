@@ -9,6 +9,19 @@
 
 [![API and UI automation](https://github.com/esinbegumkaya/HotelBooking-TestAutomation/actions/workflows/ci.yml/badge.svg)](https://github.com/esinbegumkaya/HotelBooking-TestAutomation/actions/workflows/ci.yml)
 
+
+## Application Screenshots
+
+### Homepage
+![Hotel Booking Homepage](docs/screenshots/homepage.png)
+
+### Hotel Search Results
+![Hotel Search Results](docs/screenshots/hotel-results.png)
+
+### Booking Confirmation
+![Successful Booking Confirmation](docs/screenshots/booking-confirmation.png)
+
+
 ### Verified Results
 
 - 11/11 Selenium UI tests passed.
