@@ -15,11 +15,14 @@
 ### Homepage
 ![Hotel Booking Homepage](docs/screenshots/homepage.png)
 
+### Booking Form
+![Hotel Booking Form](docs/screenshots/booking-form.png)
+
 ### Hotel Search Results
 ![Hotel Search Results](docs/screenshots/hotel-results.png)
 
-### Booking Form
-![Hotel Booking Form](docs/screenshots/booking-form.png)
+### Guest Information
+![Guest Information Form](docs/screenshots/guest-information.png)
 
 ### Booking Confirmation
 ![Successful Booking Confirmation](docs/screenshots/booking-confirmation.png)
