@@ -4,14 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node run-tests.js",
+    "test:headed": "node run-tests.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
-    "chromedriver": "^143.0.3",
-    "selenium-webdriver": "^4.39.0"
+    "selenium-webdriver": "^4.39.0",
+    "chromedriver": "^143.0.3"
   }
 }

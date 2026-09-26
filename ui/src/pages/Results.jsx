@@ -9,7 +9,7 @@ export default function Results(){
   useEffect(()=>{
     if (!API) { setError('API base URL not configured. Set VITE_API_URL.'); return }
     fetch(API + '/hotels')
-      .then(r=>r.json())
+      .then(r=> { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json() })
       .then(allHotels => {
 
         const normalizeCity = (city) => city.toLowerCase().replace(/[ıİ]/g, 'i').replace(/[şŞ]/g, 's').replace(/[ğĞ]/g, 'g').replace(/[üÜ]/g, 'u').replace(/[öÖ]/g, 'o').replace(/[çÇ]/g, 'c')

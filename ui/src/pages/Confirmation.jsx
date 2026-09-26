@@ -9,7 +9,7 @@ export default function Confirmation(){
     if (!id) { setResId('N/A'); return }
     if (!API) { setResId('API not configured'); return }
     fetch(API + '/bookings/' + id)
-      .then(r=>r.json())
+      .then(r=> { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json() })
       .then(b=> setResId(b && b.id ? b.id : 'Not found'))
       .catch(()=> setResId('Error'))
   },[API])

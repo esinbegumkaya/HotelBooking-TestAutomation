@@ -8,7 +8,7 @@ services:
     plan: free
     buildCommand: "npm install --prefix api"
     startCommand: "npm run start --prefix api"
-    repo: https://github.com/your-repo/hotel-booking-demo
+    repo: https://github.com/esinbegumkaya/HotelBooking-TestAutomation
 
   - type: static
     name: hotel-booking-demo-ui
@@ -16,7 +16,7 @@ services:
     plan: free
     buildCommand: "npm install --prefix ui && npm run build --prefix ui"
     publishPath: "ui/dist"
-    repo: https://github.com/your-repo/hotel-booking-demo
+    repo: https://github.com/esinbegumkaya/HotelBooking-TestAutomation
     envVars:
       - key: VITE_API_URL
-        value: "https://hotel-booking-demo-api.onrender.com"
+        value: "https://hotel-booking-api-29et.onrender.com"

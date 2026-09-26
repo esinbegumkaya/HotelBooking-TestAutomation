@@ -3,16 +3,23 @@
   "version": "1.0.0",
   "private": true,
   "engines": {
-    "node": ">=16"
+    "node": ">=20"
   },
   "scripts": {
-    "api": "node ./api/node_modules/json-server/bin/index.js --watch ./api/db.json --port 3001 --host 0.0.0.0",
-    "ui": "cd ui && npm run dev",
-    "ui:build": "cd ui && npm run build",
-    "dev": "concurrently \"npm:api\" \"npm:ui\"",
-    "start:api": "npm run api"
+    "api": "npm run start --prefix api",
+    "ui": "npm run dev --prefix ui",
+    "ui:build": "npm run build --prefix ui",
+    "dev": "concurrently -k \"npm:api\" \"npm:ui\"",
+    "start:api": "npm run api",
+    "test:ui": "npm test --prefix selenium",
+    "test:api": "node scripts/run-newman.js",
+    "test:all": "npm run test:api && npm run test:ui",
+    "test:unit": "node --test tests/*.test.js",
+    "test:performance": "node scripts/performance-smoke.js",
+    "test:ci": "npm run test:unit && npm run test:api && npm run test:ui"
   },
   "devDependencies": {
-    "concurrently": "^8.2.0"
+    "concurrently": "^8.2.0",
+    "newman": "^6.2.1"
   }
 }

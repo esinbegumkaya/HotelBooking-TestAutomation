@@ -1,0 +1,56 @@
+name: API and UI automation
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install
+      - run: npm ci --prefix api
+      - run: npm ci --prefix ui
+      - run: npm ci --prefix selenium
+      - run: npm run test:unit
+      - run: npm run ui:build
+      - name: Start local API and UI
+        run: |
+          npm run dev > /tmp/hotel-dev.log 2>&1 &
+          echo $! > /tmp/hotel-dev.pid
+      - name: Wait for local services
+        run: |
+          for i in {1..60}; do
+            if curl -fsS http://127.0.0.1:3001/hotels >/dev/null && curl -fsS http://127.0.0.1:5173/ >/dev/null; then exit 0; fi
+            sleep 2
+          done
+          cat /tmp/hotel-dev.log
+          exit 1
+      - name: Run API collection
+        run: npm run test:api
+        env:
+          API_URL: http://127.0.0.1:3001
+      - name: Run Selenium suite
+        run: npm run test:ui
+        env:
+          BASE_URL: http://127.0.0.1:5173
+          API_URL: http://127.0.0.1:3001
+          HEADLESS: '1'
+      - name: Preserve server log
+        if: always()
+        run: |
+          mkdir -p artifacts
+          if [ -f /tmp/hotel-dev.log ]; then cp /tmp/hotel-dev.log artifacts/hotel-dev.log; fi
+      - name: Upload test evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hotel-test-evidence
+          path: |
+            artifacts/
+            selenium/artifacts/
+          if-no-files-found: ignore
