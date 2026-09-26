@@ -1,3 +1,26 @@
+
+## Live Demo
+
+🌐 [Hotel Booking Web Application](https://hotel-booking-demo-ui.onrender.com)
+
+🔗 [REST API](https://hotel-booking-api-29et.onrender.com)
+
+✅ [GitHub Actions – Automated Tests](https://github.com/esinbegumkaya/HotelBooking-TestAutomation/actions)
+
+[![API and UI automation](https://github.com/esinbegumkaya/HotelBooking-TestAutomation/actions/workflows/ci.yml/badge.svg)](https://github.com/esinbegumkaya/HotelBooking-TestAutomation/actions/workflows/ci.yml)
+
+### Verified Results
+
+- 11/11 Selenium UI tests passed.
+- 70/70 API assertions passed in local testing.
+- GitHub Actions CI successfully completed.
+- Live booking flow verified with reservation confirmation.
+
+> This is a portfolio demonstration using a mock API.
+> Do not submit real personal or payment information.
+> Booking records may be publicly accessible.
+
+
 # Hotel Booking · API & UI Test Automation
 
 [![API and UI automation](https://github.com/esinbegumkaya/HotelBooking-TestAutomation/actions/workflows/ci.yml/badge.svg)](https://github.com/esinbegumkaya/HotelBooking-TestAutomation/actions/workflows/ci.yml)
