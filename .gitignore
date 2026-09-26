@@ -8,3 +8,20 @@ artifacts/
 selenium/artifacts/
 .coverage/
 .DS_Store
+
+# Dependencies
+**/node_modules/
+
+# Build output
+**/dist/
+
+# Environment secrets
+.env
+.env.local
+.env.*.local
+**/.env
+**/.env.local
+
+# Test artifacts
+selenium/artifacts/
+artifacts/
