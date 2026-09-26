@@ -76,24 +76,5 @@
       "city": "İzmir"
     }
   ],
-  "bookings": [
-    {
-      "firstname": "test",
-      "lastname": "cus",
-      "email": "your@gmail.com",
-      "hotelId": 7,
-      "checkin": "2026-01-09",
-      "checkout": "2026-01-23",
-      "id": 1
-    },
-    {
-      "firstname": "test",
-      "lastname": "user",
-      "email": "user@gmail.com",
-      "hotelId": 11,
-      "checkin": "2026-01-21",
-      "checkout": "2026-01-30",
-      "id": 2
-    }
-  ]
+  "bookings": []
 }
